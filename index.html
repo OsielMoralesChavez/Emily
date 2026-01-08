@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily | Game Tester & Telecom Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #0a0b10;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .nav-link {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(188, 19, 254, 0.15) 0%, rgba(10, 11, 16, 1) 70%);
+        }
+
+        .neon-border {
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+            border-color: var(--neon-purple);
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        .glitch-text {
+            text-shadow: 2px 0 var(--neon-purple), -2px 0 var(--neon-blue);
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 242, 255, 0.1);
+            position: fixed;
+            z-index: 100;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        .btn-gaming {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            transition: transform 0.2s;
+        }
+
+        .btn-gaming:hover {
+            transform: skewX(-5deg) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-[#0a0b10] border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#00f2ff] tracking-tighter">EMILY<span class="text-white">_DEV</span></div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="nav-link hover:text-[#00f2ff] transition">INICIO</a>
+                <a href="#sobre-mi" class="nav-link hover:text-[#00f2ff] transition">PERFIL</a>
+                <a href="#skills" class="nav-link hover:text-[#00f2ff] transition">HABILIDADES</a>
+                <a href="#proyectos" class="nav-link hover:text-[#00f2ff] transition">PROYECTOS</a>
+                <a href="#contacto" class="nav-link hover:text-[#00f2ff] transition">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 hero-gradient px-6">
+        <div class="text-center">
+            <p class="text-[#00f2ff] tracking-[0.3em] mb-4 animate-pulse">SYSTEM INITIALIZED</p>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 glitch-text uppercase">Emily Gnz</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto text-gray-400 font-light">
+                Estudiante de <span class="text-white font-bold">Ingeniería en Telecomunicaciones</span> & 
+                <span class="text-[#bc13fe] font-bold">Game QA Tester</span> apasionada por la optimización de software.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="#proyectos" class="btn-gaming px-8 py-3 text-black font-bold">VER PORTAFOLIO</a>
+                <a href="#contacto" class="border border-[#00f2ff] px-8 py-3 text-[#00f2ff] hover:bg-[#00f2ff] hover:text-black transition duration-300 font-bold">CONTACTAR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-[#bc13fe]"></div>
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800" alt="Setup de Gaming" class="relative z-10 w-full h-96 object-cover grayscale hover:grayscale-0 transition duration-500">
+                <div class="absolute bottom-4 right-4 z-20 bg-black p-4 border border-[#00f2ff]">
+                    <p class="text-xs text-[#00f2ff]">STATUS: ONLINE</p>
+                    <p class="text-xs">LOCATION: MEXICO</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-[#00f2ff]">_SOBRE_MÍ</h2>
+                <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                    Como estudiante de Ingeniería en Telecomunicaciones, combino el rigor técnico de las redes y sistemas con mi pasión por la industria de los videojuegos. Me especializo en el aseguramiento de calidad (QA), identificando fallos críticos y optimizando la experiencia del usuario final.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-gray-900 border-l-4 border-[#bc13fe]">
+                        <h4 class="text-white font-bold">Ingeniería</h4>
+                        <p class="text-sm text-gray-500">Telecomunicaciones</p>
+                    </div>
+                    <div class="p-4 bg-gray-900 border-l-4 border-[#00f2ff]">
+                        <h4 class="text-white font-bold">Inglés</h4>
+                        <p class="text-sm text-gray-500">70% (B2 Intermedio)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-[#0d0e14]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-[#bc13fe]">_HABILIDADES_TÉCNICAS</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-card p-8 border border-gray-800 hover:border-[#00f2ff] transition">
+                    <i class="fas fa-code text-4xl mb-4 text-[#00f2ff]"></i>
+                    <h3 class="font-bold text-xl">C / C++</h3>
+                    <p class="text-sm text-gray-500 mt-2">Sistemas embebidos y lógica de bajo nivel.</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-card p-8 border border-gray-800 hover:border-[#00f2ff] transition">
+                    <i class="fab fa-unity text-4xl mb-4 text-[#00f2ff]"></i>
+                    <h3 class="font-bold text-xl">C#</h3>
+                    <p class="text-sm text-gray-500 mt-2">Desarrollo de scripts para Unity Engine.</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-card p-8 border border-gray-800 hover:border-[#00f2ff] transition">
+                    <i class="fas fa-cube text-4xl mb-4 text-[#00f2ff]"></i>
+                    <h3 class="font-bold text-xl">Modelado 3D</h3>
+                    <p class="text-sm text-gray-500 mt-2">Creación de assets y entornos tridimensionales.</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="skill-card p-8 border border-gray-800 hover:border-[#00f2ff] transition">
+                    <i class="fas fa-bug text-4xl mb-4 text-[#00f2ff]"></i>
+                    <h3 class="font-bold text-xl">QA Testing</h3>
+                    <p class="text-sm text-gray-500 mt-2">Reporte de bugs y testeo de jugabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos / Experiencia -->
+    <section id="proyectos" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center text-[#00f2ff]">_LOGS_DE_TRABAJO</h2>
+        <div class="space-y-8">
+            <div class="neon-border p-6 bg-[#0f111a] flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-48 h-32 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-gamepad text-4xl text-gray-600"></i>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-2">Beta Tester - Proyecto Indie RPG</h3>
+                    <p class="text-gray-400 mb-4">Análisis de colisiones, mecánicas de combate y reporte detallado de errores lógicos en el motor gráfico.</p>
+                    <span class="bg-[#bc13fe] text-xs px-2 py-1 rounded">DEBUGGING</span>
+                    <span class="bg-[#00f2ff] text-black text-xs px-2 py-1 rounded ml-2 font-bold">C#</span>
+                </div>
+            </div>
+
+            <div class="neon-border p-6 bg-[#0f111a] flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-48 h-32 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-microchip text-4xl text-gray-600"></i>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-2">Simulador de Antenas (Universidad)</h3>
+                    <p class="text-gray-400 mb-4">Desarrollo de una interfaz básica en C++ para calcular la ganancia de señales en redes de telecomunicaciones.</p>
+                    <span class="bg-[#bc13fe] text-xs px-2 py-1 rounded">ENGINEERING</span>
+                    <span class="bg-[#00f2ff] text-black text-xs px-2 py-1 rounded ml-2 font-bold">C++</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-[#0a0b10]">
+        <div class="max-w-4xl mx-auto px-6 text-center border-t border-[#bc13fe] pt-20">
+            <h2 class="text-3xl font-bold mb-6 glitch-text">¿LISTO PARA EL SIGUIENTE NIVEL?</h2>
+            <p class="text-gray-400 mb-12">Actualmente disponible para proyectos de QA Testing y prácticas profesionales en Ingeniería.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <a href="mailto:emilignz094@gmail.com" class="p-6 bg-gray-900 hover:bg-gray-800 transition rounded-lg border-b-2 border-[#00f2ff]">
+                    <i class="fas fa-envelope text-[#00f2ff] text-2xl mb-4"></i>
+                    <p class="text-sm uppercase tracking-widest text-gray-500">Email</p>
+                    <p class="text-lg font-bold">emilignz094@gmail.com</p>
+                </a>
+                <a href="tel:5515271211" class="p-6 bg-gray-900 hover:bg-gray-800 transition rounded-lg border-b-2 border-[#bc13fe]">
+                    <i class="fas fa-phone text-[#bc13fe] text-2xl mb-4"></i>
+                    <p class="text-sm uppercase tracking-widest text-gray-500">Teléfono</p>
+                    <p class="text-lg font-bold">55 1527 1211</p>
+                </a>
+            </div>
+
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-3xl hover:text-[#00f2ff] transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-3xl hover:text-[#00f2ff] transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-3xl hover:text-[#00f2ff] transition"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-900">
+        <p>© 2024 EMILY GNZ | ENGINEER & GAMER PORTFOLIO</p>
+    </footer>
+
+    <script>
+        // Animación suave para los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efecto parallax muy suave al mover el ratón
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.querySelector('.hero-gradient').style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>
